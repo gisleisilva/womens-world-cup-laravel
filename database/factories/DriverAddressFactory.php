@@ -6,7 +6,7 @@ use App\Models\DriverUser;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\AppModelsDriverAddress>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\App\Models\DriverAddress>
  */
 class DriverAddressFactory extends Factory
 {

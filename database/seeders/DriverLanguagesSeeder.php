@@ -2,17 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\DriverEducation;
+use App\Models\DriverLanguages;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class DriverEducationSeeder extends Seeder
+class DriverLanguagesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        DriverEducation::factory()->create();
+        DriverLanguages::factory()->create();
     }
 }

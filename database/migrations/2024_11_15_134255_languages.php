@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('driver_education', function (Blueprint $table) {
+        Schema::create('languages', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('driver_user_id')->constrained('driver_user')->onDelete('cascade');
             $table->string('lingua');
             $table->enum('fluencia', ['Fluente', 'Intermediário', 'Básico', 'Nenhuma']);
             $table->timestamps();
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('driver_education');
+        Schema::dropIfExists('languages');
     }
 };

@@ -3,12 +3,13 @@
 namespace Database\Factories;
 
 use App\Models\DriverUser;
+use App\Models\Languages;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\AppModelsDriverEducation>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\DriverLanguage>
  */
-class DriverEducationFactory extends Factory
+class DriverLanguagesFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -19,8 +20,7 @@ class DriverEducationFactory extends Factory
     {
         return [
             'driver_user_id' => DriverUser::latest()->first()->id,
-            'lingua' => $this->faker->randomElement(['Inglês', 'Espanhol', 'Alemão', 'Italiano']),
-            'fluencia' => $this->faker->randomElement(['Fluente', 'Intermediário', 'Básico', 'Nenhuma']),
+            'languages_id'  => Languages::inRandomOrder()->first()->id,
         ];
     }
 }
