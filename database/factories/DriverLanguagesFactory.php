@@ -21,6 +21,7 @@ class DriverLanguagesFactory extends Factory
         return [
             'driver_user_id' => DriverUser::latest()->first()->id,
             'languages_id'  => Languages::inRandomOrder()->first()->id,
+            'fluencia' => $this->faker->randomElement(['F', 'I', 'B', 'N']),
         ];
     }
 }

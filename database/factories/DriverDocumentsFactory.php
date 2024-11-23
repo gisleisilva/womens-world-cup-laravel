@@ -18,14 +18,14 @@ class DriverDocumentsFactory extends Factory
     public function definition(): array
     {
         return [
-            'driver_user_id' => DriverUser::latest()->first()->id, // Cria um usuário automaticamente
+            'driver_user_id' => DriverUser::latest()->first()->id,
             'nacionalidade' => $this->faker->country(),
             'naturalidade' => $this->faker->city(),
             'nome_mae' => $this->faker->name(),
             'nome_pai' => $this->faker->name(),
             'quantidade_filhos' => $this->faker->numberBetween(0, 5),
-            'estado_civil' => $this->faker->randomElement(['Solteiro', 'Casado', 'Divorciado', 'Viúvo', 'Outro']),
-            'escolaridade' => $this->faker->randomElement(['Ensino Médio', 'Superior', 'Pós-graduação', 'Mestrado', 'Doutorado']),
+            'estado_civil' => $this->faker->randomElement(['S', 'C', 'D', 'V', 'O']),
+            'escolaridade' => $this->faker->randomElement(['E', 'S', 'P', 'M', 'D']),
             'orgao_emissor_rne' => $this->faker->word(),
             'data_emissao_rne' => $this->faker->date(),
             'data_validade_rne' => $this->faker->date(),

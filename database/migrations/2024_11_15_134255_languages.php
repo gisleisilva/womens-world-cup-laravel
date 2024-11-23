@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('languages', function (Blueprint $table) {
             $table->id();
-            $table->string('lingua');
-            $table->enum('fluencia', ['Fluente', 'Intermediário', 'Básico', 'Nenhuma']);
+            $table->string('slug');
+            $table->string('name');
             $table->timestamps();
         });
     }

@@ -11,6 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
+        /**
+         * S => Solteiro
+         * C => Casado
+         * D => Divorciado
+         * V => Viúvo
+         * O => Outro
+         * 
+         * E => Ensino Médio
+         * S => Superior
+         * P => Pós-graduação
+         * M => Mestrado
+         * D => Doutorado
+         */
+    
         Schema::create('driver_documents', function (Blueprint $table) {
             $table->id();
             $table->foreignId('driver_user_id')->constrained('driver_user')->onDelete('cascade');
@@ -19,8 +33,8 @@ return new class extends Migration
             $table->string('nome_mae');
             $table->string('nome_pai');
             $table->integer('quantidade_filhos');
-            $table->enum('estado_civil', ['Solteiro', 'Casado', 'Divorciado', 'Viúvo', 'Outro']);
-            $table->string('escolaridade');
+            $table->enum('estado_civil', ['S', 'C', 'D', 'V', 'O']);
+            $table->enum('escolaridade', ['E', 'S', 'P', 'M', 'D']);
             $table->string('orgao_emissor_rne')->nullable();
             $table->date('data_emissao_rne')->nullable();
             $table->date('data_validade_rne')->nullable();

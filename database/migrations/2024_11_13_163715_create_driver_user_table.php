@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\SexDriverUser;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,6 +12,12 @@ return new class extends Migration
      */
     public function up(): void
     {
+        /**
+         * M => Masculino
+         * F => Feminino
+         * O => Outro
+         */
+
         Schema::create('driver_user', function (Blueprint $table) {
             $table->id();
             $table->string('primeiro_nome');
@@ -19,7 +26,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('telefone_celular');
             $table->date('data_nascimento');
-            $table->enum('sexo', ['Masculino', 'Feminino', 'Outro']);
+            $table->enum('sexo', array_column(SexDriverUser::cases(), 'name'));
             $table->timestamps();
         });
     }

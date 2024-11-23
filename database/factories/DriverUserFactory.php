@@ -23,7 +23,7 @@ class DriverUserFactory extends Factory
             'email' => $this->faker->unique()->safeEmail(),
             'telefone_celular' => $this->faker->phoneNumber(),
             'data_nascimento' => $this->faker->date(),
-            'sexo' => $this->faker->randomElement(['Masculino', 'Feminino', 'Outro']),
+            'sexo' => $this->faker->randomElement(['M', 'F', 'O']),
         ];
     }
 }
