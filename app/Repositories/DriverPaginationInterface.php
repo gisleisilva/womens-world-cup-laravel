@@ -2,9 +2,6 @@
 
 namespace App\Repositories;
 interface DriverPaginationInterface {
-    /**
-     * @return stdClass[]
-     */
     public function items(): array;
     public function total(): int;
     public function isFirstPage(): bool;
